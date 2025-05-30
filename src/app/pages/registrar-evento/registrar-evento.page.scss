@@ -1,0 +1,134 @@
+/* Estilos personalizados para el formulario */
+
+/* Añade estos estilos */
+:host {
+  ion-content {
+    --background: #e6f2ff; /* Azul claro suave */
+    color: black; /* Color de texto principal */
+    /* Alternativas de tonos azules: 
+         #f0f8ff (AliceBlue)
+         #e6f0ff (azul más claro)
+         #d4e6ff (azul un poco más intenso)
+      */
+  }
+
+  /* Texto en todos los elementos del formulario */
+  ion-item,
+  ion-label,
+  ion-input,
+  ion-textarea,
+  ion-select,
+  ion-datetime-button,
+  ion-button,
+  ion-note {
+    color: black !important;
+    --color: black !important;
+  }
+
+  /* Color del texto en placeholders */
+  ion-input::placeholder,
+  ion-textarea::placeholder {
+    color: #555 !important; /* Gris oscuro para placeholders */
+    opacity: 1;
+  }
+
+  /* Color del texto en la barra de herramientas */
+  ion-toolbar {
+    --color: white; /* Mantenemos blanco el texto del toolbar */
+  }
+
+  /* Estilo específico para las notas de validación */
+  ion-note {
+    color: #d32f2f !important; /* Rojo oscuro para mensajes de error */
+  }
+
+  ion-list {
+    background: transparent;
+    margin: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  ion-item {
+    --background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    --border-radius: 8px;
+    margin-bottom: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+
+  /* Estilo específico para el botón Guardar */
+  ion-button[type="submit"] {
+    --background: rgb(123, 91, 242); /* Color violeta */
+    --color: white; /* Color del icono */
+    --background-activated: rgba(123, 91, 242, 0.8);
+    --border-radius: 8px;
+    margin: 16px 0;
+
+    ion-icon {
+      color: white; /* Color blanco para el icono */
+      font-size: 1.2em; /* Tamaño del icono */
+      margin-right: 8px; /* Espacio entre icono y texto */
+    }
+  }
+
+  ion-grid {
+    padding: 0 16px; /* Padding lateral para los botones */
+
+    ion-row {
+      margin-top: 20px; /* Espacio superior */
+    }
+  }
+
+  /* Botón INICIO */
+  ion-button[routerLink="/"] {
+    --background: rgb(123, 91, 242); /* Mismo color violeta */
+    --background-activated: rgba(123, 91, 242, 0.8);
+    --color: white;
+    --border-radius: 8px;
+    margin-top: 10px;
+  }
+}
+
+ion-note {
+  display: block;
+  padding: 0 16px 10px;
+}
+
+ion-img {
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+}
+
+ion-list {
+  margin-bottom: 20px;
+}
+
+ion-list-header {
+  font-weight: bold;
+}
+
+/* Añade al mismo archivo */
+:host {
+  ion-toolbar {
+    --background: rgb(7, 26, 76); /* Color azul oscuro especificado */
+    --color: white; /* Texto blanco */
+    padding-left: 16px; /* Alineación izquierda */
+  }
+
+  ion-title {
+    text-align: left; /* Alineación texto a la izquierda */
+    font-weight: 600; /* Opcional: grosor de fuente */
+    padding-inline: 0; /* Elimina padding por defecto */
+  }
+
+  ion-button {
+    --background: #3880ff;
+    --background-activated: #4d8cff;
+  }
+
+  ion-datetime-button {
+    --ion-color-base: #3880ff !important;
+  }
+}

@@ -1,0 +1,231 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <!-- Sección 1: Información básica -->
+    <ion-list>
+      <ion-item>
+        <ion-input
+          label="Código"
+          placeholder="Ingrese el código del evento"
+          formControlName="idCodEvento"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Título"
+          placeholder="Ingrese el título"
+          formControlName="titulo"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-note
+        color="danger"
+        *ngIf="registroForm.get('titulo')?.invalid && registroForm.get('titulo')?.touched"
+      >
+        Este campo es requerido
+      </ion-note>
+
+      <ion-item>
+        <ion-textarea
+          label="Descripción"
+          placeholder="Ingrese la descripción"
+          formControlName="descripcion"
+          required
+        >
+        </ion-textarea>
+      </ion-item>
+      <ion-note
+        color="danger"
+        *ngIf="registroForm.get('descripcion')?.invalid && registroForm.get('descripcion')?.touched"
+      >
+        Este campo es requerido
+      </ion-note>
+    </ion-list>
+
+    <!-- Sección 2: Ubicación -->
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Ubicación</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input
+          label="Dirección"
+          placeholder="Ingrese la dirección"
+          formControlName="ubicacion"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-note
+        color="danger"
+        *ngIf="registroForm.get('ubicacion')?.invalid && registroForm.get('ubicacion')?.touched"
+      >
+        Este campo es requerido
+      </ion-note>
+
+      <ion-item>
+        <ion-input
+          label="Latitud"
+          placeholder="Ingrese la latitud"
+          formControlName="latitud"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Longitud"
+          placeholder="Ingrese la longitud"
+          formControlName="longitud"
+        >
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <!-- Sección 3: Multimedia -->
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Multimedia</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Fecha de creación</ion-label>
+        <ion-datetime-button datetime="fechaCreacion"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="fechaCreacion"
+              formControlName="fechaCreacion"
+              presentation="date"
+            >
+            </ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <ion-button fill="clear" (click)="tomarFoto()">
+          <ion-icon slot="start" name="camera"></ion-icon>
+          Seleccionar
+        </ion-button>
+      </ion-item>
+      <ion-img
+        *ngIf="imagenPrevia"
+        [src]="imagenPrevia"
+        style="max-height: 200px"
+      ></ion-img>
+
+      <ion-item>
+        <ion-label>Video</ion-label>
+        <ion-button fill="clear" (click)="seleccionarVideo()">
+          <ion-icon slot="start" name="videocam"></ion-icon>
+          Seleccionar
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea
+          label="Comentario"
+          placeholder="Ingrese un comentario"
+          formControlName="comentario"
+        >
+        </ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <!-- Sección 4: Detalles adicionales -->
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Detalles adicionales</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input
+          label="Popularidad"
+          type="number"
+          placeholder="Ingrese la popularidad"
+          formControlName="popularidad"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-note
+        color="danger"
+        *ngIf="registroForm.get('popularidad')?.invalid && registroForm.get('popularidad')?.touched"
+      >
+        Debe ser un número
+      </ion-note>
+
+      <ion-item>
+        <ion-select
+          label="Estado"
+          formControlName="estado"
+          interface="popover"
+          required
+        >
+          <ion-select-option value="Activo">Activo</ion-select-option>
+          <ion-select-option value="Inactivo">Inactivo</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Tipo de Contenido"
+          formControlName="tipoContenido"
+          interface="popover"
+          required
+        >
+          <ion-select-option value="Evento">Evento</ion-select-option>
+          <ion-select-option value="Noticia">Noticia</ion-select-option>
+          <ion-select-option value="Promoción">Promoción</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note
+        color="danger"
+        *ngIf="registroForm.get('tipoContenido')?.invalid && registroForm.get('tipoContenido')?.touched"
+      >
+        Este campo es requerido
+      </ion-note>
+
+      <ion-item>
+        <ion-input
+          label="ID Usuario"
+          placeholder="Ingrese el ID del usuario"
+          formControlName="idUsuario"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-note
+        color="danger"
+        *ngIf="registroForm.get('idUsuario')?.invalid && registroForm.get('idUsuario')?.touched"
+      >
+        Este campo es requerido
+      </ion-note>
+    </ion-list>
+
+    <!-- Botones de acción -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block">
+            <ion-icon slot="start" name="save"></ion-icon>
+            <!-- Icono de diskette -->
+            <span style="color: white">Guardar</span>
+            <!-- Texto blanco -->
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
