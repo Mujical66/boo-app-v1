@@ -112,26 +112,64 @@
         </ion-modal>
       </ion-item>
 
+      <!-- Seleccionar la Imagen -->
       <ion-item>
         <ion-label>Imagen</ion-label>
         <ion-button fill="clear" (click)="tomarFoto()">
           <ion-icon slot="start" name="camera"></ion-icon>
           Seleccionar
         </ion-button>
+        <!-- Botón para eliminar (solo visible cuando hay imagen) -->
+        <ion-button
+          *ngIf="imagenPrevia"
+          fill="clear"
+          color="danger"
+          (click)="eliminarImagen()"
+        >
+          <ion-icon slot="start" name="trash"></ion-icon>
+          Eliminar
+        </ion-button>
       </ion-item>
-      <ion-img
-        *ngIf="imagenPrevia"
-        [src]="imagenPrevia"
-        style="max-height: 200px"
-      ></ion-img>
 
+      <!-- Vista previa de la imagen con opción de eliminación -->
+      <div *ngIf="imagenPrevia" class="image-container">
+        <ion-img [src]="imagenPrevia" style="max-height: 200px"></ion-img>
+      </div>
+
+      <!-- Sección para video -->
       <ion-item>
         <ion-label>Video</ion-label>
         <ion-button fill="clear" (click)="seleccionarVideo()">
-          <ion-icon slot="start" name="videocam"></ion-icon>
+          <ion-icon name="videocam" slot="start"></ion-icon>
           Seleccionar
         </ion-button>
+        <ion-button
+          *ngIf="videoPrevia || nombreArchivo"
+          fill="clear"
+          color="danger"
+          (click)="eliminarVideo()"
+        >
+          <ion-icon name="trash" slot="start"></ion-icon>
+          Eliminar
+        </ion-button>
       </ion-item>
+
+      <!-- Vista previa del video -->
+      <div class="video-container" *ngIf="videoPrevia && esVideo">
+        <video controls class="video-preview">
+          <source
+            [src]="videoPrevia"
+            [type]="registroForm.get('video')?.value?.mimeType"
+          />
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </div>
+
+      <!-- Información del archivo cuando no es video -->
+      <div *ngIf="!esVideo && nombreArchivo" class="file-info">
+        <ion-icon name="document" slot="start"></ion-icon>
+        Archivo seleccionado: {{ nombreArchivo }} (no es un video compatible)
+      </div>
 
       <ion-item>
         <ion-textarea
@@ -185,9 +223,9 @@
           interface="popover"
           required
         >
-          <ion-select-option value="Evento">Evento</ion-select-option>
-          <ion-select-option value="Noticia">Noticia</ion-select-option>
-          <ion-select-option value="Promoción">Promoción</ion-select-option>
+          <ion-select-option value="Evento">Mito</ion-select-option>
+          <ion-select-option value="Noticia">Leyenda</ion-select-option>
+          <ion-select-option value="Promoción">Otro</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-note

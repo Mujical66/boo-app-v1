@@ -131,4 +131,67 @@ ion-list-header {
   ion-datetime-button {
     --ion-color-base: #3880ff !important;
   }
+
+  .video-container {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    video {
+      width: 100%;
+      max-height: 250px;
+      border-radius: 8px;
+      background-color: #000;
+    }
+  }
+}
+
+.preview-container {
+  margin: 16px;
+  text-align: center;
+}
+
+.video-preview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.image-preview {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  margin: 16px;
+  padding: 10px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  color: var(--ion-color-medium);
+
+  ion-icon {
+    margin-right: 8px;
+    font-size: 24px;
+  }
+}
+
+.image-container {
+  margin: 16px;
+  text-align: center;
+  position: relative;
+}
+
+/* Estilo opcional para el botón de eliminar en la vista previa */
+.image-container ion-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  --padding-start: 8px;
+  --padding-end: 8px;
 }
