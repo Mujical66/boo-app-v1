@@ -1,9 +1,18 @@
+/* 
+NOMBRE: RegistrarEventoPage.scss
+DESCRIPCIÓN: Estilos personalizados para la página de registro de eventos en BooApp.
+DESARROLLADOR: Luis Mujica
+FECHA: 2025-05-31
+PROYECTO: BooApp
+VERSION: 1.0.0  
+*/
+
 /* Estilos personalizados para el formulario */
 
 /* Añade estos estilos */
 :host {
   ion-content {
-    --background: #e6f2ff; /* Azul claro suave */
+    --background: #edf2fa; /* Color de fondo del formulario */
     color: black; /* Color de texto principal */
     /* Alternativas de tonos azules: 
          #f0f8ff (AliceBlue)

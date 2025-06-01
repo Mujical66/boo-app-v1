@@ -1,14 +1,26 @@
+<!-- /* 
+NOMBRE: registrar-evento.page.html
+DESCRIPCIÓN: Plantilla HTML para el componente RegistrarEventoPage, que permite registrar eventos con información básica, ubicación, multimedia y detalles adicionales.
+DESARROLLADOR: Luis Mujica
+FECHA: 2025-05-31
+PROYECTO: BooApp
+VERSION: 1.0.0  
+*/ -->
+
+<!-- Titulo principal -->
 <ion-header>
   <ion-toolbar>
     <ion-title>Registro de Evento</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Inicio de Solicitud de datos del Formulario -->
 <ion-content>
   <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
     <!-- Sección 1: Información básica -->
     <ion-list>
       <ion-item>
+        <!-- Campo Código del Evento -->
         <ion-input
           label="Código"
           placeholder="Ingrese el código del evento"
@@ -18,6 +30,7 @@
       </ion-item>
 
       <ion-item>
+        <!-- Campo Titulo del Evento -->
         <ion-input
           label="Título"
           placeholder="Ingrese el título"
@@ -33,6 +46,7 @@
         Este campo es requerido
       </ion-note>
 
+      <!-- Campo Descripción del Evento -->
       <ion-item>
         <ion-textarea
           label="Descripción"
@@ -57,6 +71,7 @@
       </ion-list-header>
 
       <ion-item>
+        <!-- Campo Dirección del Evento -->
         <ion-input
           label="Dirección"
           placeholder="Ingrese la dirección"
@@ -73,6 +88,7 @@
       </ion-note>
 
       <ion-item>
+        <!-- Campo Latitud del Evento -->
         <ion-input
           label="Latitud"
           placeholder="Ingrese la latitud"
@@ -82,6 +98,7 @@
       </ion-item>
 
       <ion-item>
+        <!-- Campo Longitud del Evento -->
         <ion-input
           label="Longitud"
           placeholder="Ingrese la longitud"
@@ -98,6 +115,7 @@
       </ion-list-header>
 
       <ion-item>
+        <!-- Campo Fecha de Creación del Evento -->
         <ion-label>Fecha de creación</ion-label>
         <ion-datetime-button datetime="fechaCreacion"></ion-datetime-button>
         <ion-modal [keepContentsMounted]="true">
@@ -114,6 +132,7 @@
 
       <!-- Seleccionar la Imagen -->
       <ion-item>
+        <!-- Campo Imagen del Evento -->
         <ion-label>Imagen</ion-label>
         <ion-button fill="clear" (click)="tomarFoto()">
           <ion-icon slot="start" name="camera"></ion-icon>
@@ -138,6 +157,7 @@
 
       <!-- Sección para video -->
       <ion-item>
+        <!-- Campo Video del Evento -->
         <ion-label>Video</ion-label>
         <ion-button fill="clear" (click)="seleccionarVideo()">
           <ion-icon name="videocam" slot="start"></ion-icon>
@@ -188,6 +208,7 @@
       </ion-list-header>
 
       <ion-item>
+        <!-- Campo Popularidad del Evento (0-5) -->
         <ion-input
           label="Popularidad"
           type="number"
@@ -205,6 +226,7 @@
       </ion-note>
 
       <ion-item>
+        <!-- Campo Estado del Evento "Activo / Inactivo" -->
         <ion-select
           label="Estado"
           formControlName="estado"
@@ -217,15 +239,16 @@
       </ion-item>
 
       <ion-item>
+        <!-- Campo Tipo de Contenido del Evento (Mito / Leyenda / Otro) -->
         <ion-select
           label="Tipo de Contenido"
           formControlName="tipoContenido"
           interface="popover"
           required
         >
-          <ion-select-option value="Evento">Mito</ion-select-option>
-          <ion-select-option value="Noticia">Leyenda</ion-select-option>
-          <ion-select-option value="Promoción">Otro</ion-select-option>
+          <ion-select-option value="Mito">Mito</ion-select-option>
+          <ion-select-option value="Leyenda">Leyenda</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-note
@@ -236,6 +259,7 @@
       </ion-note>
 
       <ion-item>
+        <!-- Campo ID del Usuario que REgistra el Evento -->
         <ion-input
           label="ID Usuario"
           placeholder="Ingrese el ID del usuario"
