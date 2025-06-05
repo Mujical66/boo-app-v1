@@ -1,0 +1,29 @@
+/* 
+NOMBRE: menu-conexion.page.scss
+DESCRIPCIÓN: Estilos personalizados para la página de conexión del menú en BooApp.
+DESARROLLADOR: Luis Mujica
+FECHA: 2025-06-03
+PROYECTO: BooApp
+VERSION: 1.0.0  
+*/
+
+/* menu-conexion.page.scss */
+ion-toolbar {
+  --background: #3880ff; /* Color de fondo del header */
+  --color: white; /* Color del texto */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.custom-button {
+  --background: #3880ff;
+  --background-hover: #4d8eff;
+  --color: white;
+  --border-radius: 8px;
+  height: 50px;
+}

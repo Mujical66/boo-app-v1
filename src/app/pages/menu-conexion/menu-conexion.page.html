@@ -1,0 +1,64 @@
+<!-- /* 
+NOMBRE: menu-conexion.page.html
+DESCRIPCIÓN: Plantilla HTML para el componente de menú de conexión, que permite a los usuarios conectarse a diferentes servicios o redes.
+DESARROLLADOR: Luis Mujica
+FECHA: 2025-06-03
+PROYECTO: BooApp
+VERSION: 1.0.0  
+*/ -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Menú Principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- menu-conexion.page.html -->
+<ion-content [fullscreen]="false" class="ion-padding">
+  <div class="button-container">
+    <!-- Botón Registrar Evento -->
+    <ion-button
+      expand="block"
+      routerLink="/registrar-evento"
+      class="custom-button"
+    >
+      Registrar Evento
+    </ion-button>
+
+    <!-- Botón CRUD de Eventos -->
+    <ion-button
+      expand="block"
+      routerLink="/list-crud-evento"
+      class="custom-button"
+    >
+      CRUD de Eventos
+    </ion-button>
+
+    <!-- Botón Editar Evento -->
+    <ion-button expand="block" routerLink="/patch-evento" class="custom-button">
+      Editar Evento
+    </ion-button>
+
+    <!-- Botón Eliminar Evento -->
+    <ion-button
+      expand="block"
+      routerLink="/delete-evento"
+      class="custom-button"
+    >
+      Eliminar Evento
+    </ion-button>
+
+    <!-- Botón Restaurar Evento -->
+    <ion-button
+      expand="block"
+      routerLink="/undelete-evento"
+      class="custom-button"
+    >
+      Restaurar Evento
+    </ion-button>
+
+    <!-- Botón Home API Rest BooApp -->
+    <ion-button expand="block" routerLink="/home" class="custom-button">
+      Home Prueba API Rest BooApp
+    </ion-button>
+  </div>
+</ion-content>

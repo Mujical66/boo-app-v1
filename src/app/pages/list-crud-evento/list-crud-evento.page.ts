@@ -1,6 +1,6 @@
 /* 
-NOMBRE: home.page.ts
-DESCRIPCION: Componente principal de la página de inicio de BooApp.
+NOMBRE: ListCrudEventoPage.ts
+DESCRIPCION: Página de la logica para listar y gestionar el CRUD (Delete - Patch) de eventos.
 DESARROLLADOR: Luis Mujica
 FECHA: 2025-06-03
 PROYECTO: BooApp
@@ -13,36 +13,48 @@ import {
   IonTitle,
   IonContent,
   IonList,
-  IonItem,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  // IonCardContent,
+  // IonCardContent,
+  // IonItem,
   IonSpinner,
 } from '@ionic/angular/standalone';
 import { NgIf, NgFor } from '@angular/common';
-import { ApiBooappService } from '../services/api-booapp.service';
+import { ApiBooappService } from '../../services/api-booapp.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-list-crud-evento',
+  templateUrl: 'list-crud-evento.page.html',
+  styleUrls: ['list-crud-evento.page.scss'],
+  standalone: true,
   imports: [
     IonHeader,
     IonToolbar,
     IonTitle,
     IonContent,
     IonList,
-    IonItem,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    // IonCardContent,
+    // IonCardContent,
+    // IonItem,
     IonSpinner,
     NgIf,
     NgFor,
   ],
 })
-export class HomePage implements OnInit {
+export class ListCrudEventoPage implements OnInit {
   data: any[] = [];
   cargando: boolean = true;
 
   constructor(private apiService: ApiBooappService) {}
 
   ngOnInit(): void {
-    // Initialization logic here
     this.llenarDatos();
   }
 
@@ -50,7 +62,6 @@ export class HomePage implements OnInit {
     this.cargando = true;
     this.apiService.getData().subscribe({
       next: (response) => {
-        // Ajusta aquí para tomar el array correcto
         this.data = response.data?.colEventosleps || [];
         this.cargando = false;
         console.log('Datos obtenidos:', this.data);

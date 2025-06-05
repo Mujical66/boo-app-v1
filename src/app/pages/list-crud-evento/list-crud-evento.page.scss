@@ -1,0 +1,72 @@
+/* 
+NOMBRE: ListCrudEventoPage.scss
+DESCRIPCIÓN: Estilos personalizados para la página de lista y CRUD de eventos en BooApp.
+DESARROLLADOR: Luis Mujica
+FECHA: 2025-06-03
+PROYECTO: BooApp
+VERSION: 1.0.0  
+*/
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.campo-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.spinner-title {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #666;
+}
+
+.small-subtitle {
+  font-size: 0.7rem; /* Puedes ajustar este valor según lo necesites */
+}
+
+.small-title {
+  font-size: 0.75rem; /* Puedes ajustar este valor según lo necesites */
+}
+
+.card-img {
+  display: block;
+  margin: 16px auto 20px auto; /* 16px arriba, 20px abajo, centrado */
+  width: 300px; /* Ajusta el ancho deseado */
+  height: 300px; /* Ajusta el alto deseado */
+  object-fit: cover; /* O usa 'contain' si prefieres ver la imagen completa */
+  border-radius: 12px; /* Opcional: bordes redondeados */
+  background: #f4f4f4; /* Opcional: fondo gris si la imagen no llena el espacio */
+}
