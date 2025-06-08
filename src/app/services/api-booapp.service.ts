@@ -19,7 +19,21 @@ export class ApiBooappService {
 
   constructor(private http: HttpClient) {}
 
+  // ==================== EVENTOS PARANORMALES ====================
+  /**
+   * Obtiene la lista de eventos paranormales desde la API.
+   * @returns Observable con los datos de los eventos.
+   */
   public getData(): Observable<any> {
     return this.http.get<any>(`${this.urlApi}/colevento`);
+  }
+
+  /**
+   * Elimina un evento por su ID.
+   * @param id - ID del evento a eliminar.
+   * @returns Observable con la respuesta de la eliminación.
+   */
+  public eliminarEvento(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.urlApi}/colevento/${id}`);
   }
 }

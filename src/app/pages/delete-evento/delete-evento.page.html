@@ -7,15 +7,104 @@ PROYECTO: BooApp
 VERSION: 1.0.0  
 */ -->
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Página Eliminar Evento</ion-title>
+  <!--  <ion-searchbar placeholder="Custom Placeholder"></ion-searchbar> -->
+  <ion-toolbar class="toolbar-azul-oscuro">
+    <ion-title class="titulo-blanco-izq">Página Eliminar Evento</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="fondo-formulario">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Eliminar Evento</ion-title>
+    <ion-toolbar class="toolbar-azul-oscuro">
+      <ion-title size="large" class="titulo-blanco-izq"
+        >Eliminar Evento</ion-title
+      >
     </ion-toolbar>
   </ion-header>
+
+  <!-- Prueba de Selector -->
+
+  <ion-list class="fondo-lista-clara">
+    <!-- Item del Código del Evento-->
+    <ion-item>
+      <ion-input
+        label="Código"
+        labelPlacement="stacked"
+        placeholder="COD-001"
+        readonly
+      ></ion-input>
+    </ion-item>
+
+    <!-- Item del Titulo del Evento-->
+    <ion-item>
+      <ion-input
+        label="Titulo"
+        labelPlacement="stacked"
+        placeholder="Titulo"
+        readonly
+      ></ion-input>
+    </ion-item>
+
+    <!-- Item del Descriopción del Evento-->
+    <ion-item>
+      <ion-input
+        label="Descripción"
+        labelPlacement="stacked"
+        placeholder="descripción"
+        readonly
+      ></ion-input>
+    </ion-item>
+
+    <!-- Sección Ubicación -->
+
+    <!-- Item del Dirección del Evento-->
+    <ion-item>
+      <ion-input
+        label="Dirección"
+        labelPlacement="stacked"
+        placeholder="Dirección"
+        readonly
+      ></ion-input>
+    </ion-item>
+
+    <!-- Item de la Latitud del Evento-->
+    <ion-item>
+      <ion-input
+        label="Latitud"
+        labelPlacement="stacked"
+        placeholder="Latitud"
+        readonly
+      ></ion-input>
+    </ion-item>
+
+    <!-- Item de la Longitud del Evento-->
+    <ion-item>
+      <ion-input
+        label="Longitud"
+        labelPlacement="stacked"
+        placeholder="Longitud"
+        readonly
+      ></ion-input>
+    </ion-item>
+
+    <!-- Sección Multimedia -->
+
+    <!-- Item del Fecha de Creación del Evento-->
+    <ion-item>
+      <ion-input
+        label="Fecha de Creación"
+        labelPlacement="stacked"
+        placeholder="02/06/2025"
+        readonly
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- Seccion del selector para la eliminación logica del Registro -->
+  <div class="seccion-titulo-toggle">
+    <ion-toggle [checked]="false">Activa la Eliminación Logica</ion-toggle>
+  </div>
+  <br /><br />
+
+  <!-- Aquí va el contenido del formulario -->
 </ion-content>

@@ -6,3 +6,66 @@ FECHA: 2025-06-03
 PROYECTO: BooApp
 VERSION: 1.0.0  
 */
+
+.fondo-formulario {
+  --background: #f6f9ff !important;
+}
+
+.toolbar-azul-oscuro {
+  --background: #061a4c !important;
+  --color: #fff !important;
+}
+
+.titulo-blanco-izq {
+  color: #fff !important;
+  font-size: 18px !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* Ajusta este valor según lo que necesites */
+}
+
+.seccion-titulo {
+  margin-top: 15px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #061a4c;
+}
+
+.seccion-titulo-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #061a4c;
+}
+
+.seccion-titulo-toggle ion-toggle {
+  margin-left: 16px;
+}
+
+ion-title[size="large"].titulo-blanco-izq {
+  margin-top: 6px; /* O el valor que prefieras */
+}
+
+.fondo-lista-clara {
+  --background: #ebf0f5 !important;
+  color: #111 !important;
+}
+
+.fondo-lista-clara ion-item {
+  --background: #ebf0f5 !important;
+  color: #111 !important;
+}
+
+.fondo-lista-clara ion-label,
+.fondo-lista-clara ion-input,
+.fondo-lista-clara div,
+.fondo-lista-clara span {
+  color: #111 !important;
+}

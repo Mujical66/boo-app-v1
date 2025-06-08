@@ -6,3 +6,166 @@ FECHA: 2025-06-03
 PROYECTO: BooApp
 VERSION: 1.0.0  
 */
+
+/* Estilos para el ion-header */
+ion-item .label-block {
+  margin-bottom: 4px;
+}
+
+/* Estilos generales para el ion-content */
+:host {
+  ion-content {
+    --background: #edf2fa; /* Color de fondo del formulario */
+    color: black; /* Color de texto principal */
+    /* Alternativas de tonos azules: 
+           #f0f8ff (AliceBlue)
+           #e6f0ff (azul más claro)
+           #d4e6ff (azul un poco más intenso)
+        */
+  }
+}
+
+/* Estilo del ion-header */
+.fondo-azul-claro {
+  --background: #e3f0ff; /* azul claro */
+  color: #111 !important; /* letras en negro */
+}
+
+.fondo-azul-claro ion-label,
+.fondo-azul-claro ion-input,
+.fondo-azul-claro ion-text,
+.fondo-azul-claro ion-select,
+.fondo-azul-claro ion-datetime,
+.fondo-azul-claro div,
+.fondo-azul-claro span {
+  color: #111 !important;
+}
+
+/* Estilo del ion-item */
+ion-item {
+  --background: #e3f0ff !important; /* azul claro */
+  --color: #111 !important; /* letras en negro */
+}
+
+ion-item ion-label,
+ion-item ion-input,
+ion-item ion-select,
+ion-item ion-text,
+ion-item div,
+ion-item span {
+  color: #111 !important;
+}
+.toolbar-azul-oscuro {
+  --background: #003366; /* azul oscuro */
+  --color: #fff !important; /* letras blancas */
+}
+
+/* Estilo de la Barra principal del titulo del formulario */
+.toolbar-azul-oscuro ion-title {
+  color: #fff !important;
+}
+
+/* Estilo de contenedor de la Imagen */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo de contenedor del Video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo de la Vista previa del Video */
+.video-preview {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+/* Estilo de de los container de la imagen y Video */
+.image-container,
+.video-container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo del asteristo de los campos editables */
+.asterisco-negrita {
+  color: #750505 !important;
+  font-weight: bold;
+}
+
+/* Estilo de las Etiquetas de los campos editables */
+.etiqueta-campos-editables {
+  color: #e53935 !important;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  text-align: right !important;
+  display: block !important;
+}
+
+/* Estilos para el contenedor de botones de acción */
+.botones-acciones {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para los botones de acción */
+ion-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el título principal del evento */
+.titulo-principal-evento {
+  color: #e53935;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones */
+.boton-ancho {
+  min-width: 120px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Puedes agregar esto en patch-evento.page.scss */
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.7); // Fondo semitransparente opcional
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Para hacer el fondo del loading más transparente */
+ion-loading::part(backdrop) {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ) !important; /* Cambia 0.2 por la opacidad deseada */
+}
