@@ -1,0 +1,93 @@
+/* 
+NOMBRE: list-mapa-ruta.page.scss
+DESCRIPCIÓN: Estilos personalizados para la página de lista de las rutas.
+DESARROLLADOR: Luis Mujica
+FECHA: 2025-06-09
+PROYECTO: BooApp
+VERSION: 1.0.0  
+*/
+
+body {
+  background: #edf2fa !important;
+}
+
+:host {
+  ion-content {
+    --background: #edf2fa; /* Color de fondo del formulario */
+    color: black; /* Color de texto principal */
+    /* Alternativas de tonos azules: 
+           #f0f8ff (AliceBlue)
+           #e6f0ff (azul más claro)
+           #d4e6ff (azul un poco más intenso)
+        */
+  }
+}
+
+/* Estilos de la Barra superior de identificación del formulario */
+.toolbar-azul-oscuro {
+  --background: rgb(7, 26, 76); /* Color azul oscuro especificado */
+  --color: white; /* Texto blanco */
+  padding-left: 16px; /* Alineación izquierda */
+
+  ion-title {
+    color: #f4f4f7 !important;
+    font-size: 16px;
+    padding-top: 10px; /* Espacio superior */
+  }
+}
+
+.toolbar-azul-oscuro {
+  --background: #003366; /* azul oscuro */
+  --color: #fff !important; /* texto blanco */
+}
+
+.spinner-container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  min-height: 150px;
+  background: transparent; // Asegura que no tape el fondo
+  width: 100%;
+}
+.spinner-title {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  color: #03010e;
+  font-weight: bold;
+}
+
+ion-spinner {
+  color: #5e5d5d !important; /* Negro */
+}
+
+.fondo-azul-claro {
+  --background: #e3f0ff !important; /* Azul claro */
+}
+
+.texto-gris-oscuro,
+.texto-gris-oscuro * {
+  color: #f1efef !important; /* Gris oscuro */
+}
+
+.fondo-azul-claro {
+  --background: #e3f0ff !important;
+}
+
+/* Letras blancas en modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .fondo-azul-claro,
+  .fondo-azul-claro * {
+    color: #edf2fa !important;
+  }
+}
+
+/* Letras gris oscuro en modo claro */
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  .fondo-azul-claro,
+  .fondo-azul-claro * {
+    color: #333 !important;
+  }
+}

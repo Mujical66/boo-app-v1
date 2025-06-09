@@ -57,4 +57,16 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
+
+  {
+    path: 'geolocalizacion-ruta',
+    loadComponent: () =>
+      import('./pages/geolocalizacion-ruta/geolocalizacion-ruta.page').then(
+        (m) => m.GeolocalizacionRutaPage
+      ),
+  },
+  {
+    path: 'list-mapa-ruta',
+    loadComponent: () => import('./pages/list-mapa-ruta/list-mapa-ruta.page').then( m => m.ListMapaRutaPage)
+  },
 ];
