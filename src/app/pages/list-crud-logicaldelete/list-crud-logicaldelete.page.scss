@@ -1,0 +1,28 @@
+body {
+  background: #edf2fa !important;
+}
+
+:host {
+  ion-content {
+    --background: #edf2fa !important; /* Fondo del formulario */
+    color: black;
+  }
+}
+
+.toolbar-azul-oscuro {
+  --background: #003366 !important; /* Azul oscuro solo en la cabecera */
+  --color: #fff !important;
+  padding-left: 16px;
+
+  ion-title {
+    color: #fff !important;
+    font-size: 16px;
+    padding-top: 10px;
+  }
+}
+
+ion-title,
+ion-header ion-title,
+ion-toolbar ion-title {
+  color: #fff !important;
+}

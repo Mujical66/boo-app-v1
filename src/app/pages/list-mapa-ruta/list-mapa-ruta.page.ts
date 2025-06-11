@@ -57,11 +57,9 @@ import { ApiBooappService } from '../../services/api-booapp.service';
     IonItem,
     IonAvatar,
     IonLabel,
-    //    IonInfiniteScroll,
-    //    IonInfiniteScrollContent,
-    IonButtons, // <-- Agrega este import
-    IonBackButton, // <-- Agrega este import si usas <ion-back-button>
-    IonButton, // <-- Agrega este import
+    IonButtons,
+    IonBackButton,
+    IonButton,
     IonSpinner,
   ],
 })

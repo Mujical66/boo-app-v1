@@ -76,6 +76,14 @@ ion-spinner {
   --background: #e3f0ff !important;
 }
 
+.spinner-container .spinner-title {
+  color: #222; /* Color por defecto para modo claro */
+}
+
+:host-context(.dark) .spinner-container .spinner-title {
+  color: #fff; /* Color blanco para modo oscuro */
+}
+
 /* Letras blancas en modo oscuro */
 @media (prefers-color-scheme: dark) {
   .fondo-azul-claro,

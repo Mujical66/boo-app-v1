@@ -1,0 +1,32 @@
+/* src/app/pages/ar-view/ar-view.page.scss */
+
+ion-content {
+  --background: transparent !important; // Hace el fondo transparente para que se vea la cámara
+}
+
+.game-info-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 10; // Asegura que este div esté por encima de la escena AR
+  background: rgba(0, 0, 0, 0.6); // Fondo semitransparente oscuro
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-info-overlay p {
+  margin: 0 0 8px 0;
+  font-size: 0.9em;
+}
+
+.game-info-overlay ion-button {
+  margin-top: 10px;
+  --background: var(
+    --ion-color-tertiary
+  ); // Ejemplo, puedes usar el color de tu tema
+  --color: white;
+}

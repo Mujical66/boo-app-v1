@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu-conexion"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Desenterrando Leyendas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="game-info-overlay">
+    <p>¡Busca los símbolos legendarios con tu cámara!</p>
+    <p id="discovery-message">Escanea el primer marcador...</p>
+    <ion-button *ngIf="foundLegends.length > 0" (click)="viewCollection()"
+      >Ver Colección ({{foundLegends.length}})</ion-button
+    >
+  </div>
+
+  <a-scene
+    embedded
+    arjs="sourceType: webcam; debugUIEnabled: false;"
+    vr-mode-ui="enabled: false"
+  >
+    <a-assets>
+      <a-asset-item
+        id="imagen1Model"
+        src="assets/models/Big_Tree.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="imagen2Model"
+        src="assets/models/Book.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="imagen3Model"
+        src="assets/models/Dock_Long.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="imagen4Model"
+        src="assets/models/Fantasy_Stable.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="imagen5Model"
+        src="assets/models/Spellbook.glb"
+      ></a-asset-item>
+    </a-assets>
+
+    <a-marker
+      type="pattern"
+      url="assets/markers/pattern-imagen1.patt"
+      id="marker-imagen1"
+    >
+      <a-entity
+        gltf-model="#imagen1Model"
+        scale="0.05 0.05 0.05"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        animation-mixer="clip: *; loop: repeat; duration: 2"
+        class="legend-entity"
+        data-legend-id="imagen1"
+        data-legend-name="Fantasma Bebe"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      url="assets/markers/pattern-imagen2.patt"
+      id="marker-imagen2"
+    >
+      <a-entity
+        gltf-model="#imagen2Model"
+        scale="0.01 0.01 0.01"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        class="legend-entity"
+        data-legend-id="imagen2"
+        data-legend-name="Casa Fantasma"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      url="assets/markers/pattern-imagen3.patt"
+      id="marker-imagen3"
+    >
+      <a-entity
+        gltf-model="#imagen3Model"
+        scale="0.02 0.02 0.02"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        animation-mixer="clip: *; loop: repeat; duration: 2"
+        class="legend-entity"
+        data-legend-id="imagen3"
+        data-legend-name="Fantasma Prohibido"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      url="assets/markers/pattern-imagen4.patt"
+      id="marker-imagen4"
+    >
+      <a-entity
+        gltf-model="#imagen4Model"
+        scale="0.02 0.02 0.02"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        animation-mixer="clip: *; loop: repeat; duration: 2"
+        class="legend-entity"
+        data-legend-id="imagen4"
+        data-legend-name="Grupo de Fantasma"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      url="assets/markers/pattern-imagen5.patt"
+      id="marker-imagen5"
+    >
+      <a-entity
+        gltf-model="#imagen5Model"
+        scale="0.02 0.02 0.02"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        animation-mixer="clip: *; loop: repeat; duration: 2"
+        class="legend-entity"
+        data-legend-id="imagen5"
+        data-legend-name="Calabera Fantasmagorica"
+      ></a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</ion-content>

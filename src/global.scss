@@ -37,3 +37,13 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 @import "mapbox-gl/dist/mapbox-gl.css";
+
+/* Para componentes standalone/Ionic */
+:host-context(.dark) .spinner-container .spinner-title {
+  color: #fff !important;
+}
+
+/* Para asegurar en toda la app */
+.dark .spinner-container .spinner-title {
+  color: #fff !important;
+}

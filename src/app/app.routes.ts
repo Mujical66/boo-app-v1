@@ -67,6 +67,35 @@ export const routes: Routes = [
   },
   {
     path: 'list-mapa-ruta',
-    loadComponent: () => import('./pages/list-mapa-ruta/list-mapa-ruta.page').then( m => m.ListMapaRutaPage)
+    loadComponent: () =>
+      import('./pages/list-mapa-ruta/list-mapa-ruta.page').then(
+        (m) => m.ListMapaRutaPage
+      ),
+  },
+  {
+    path: 'list-crud-logicaldelete',
+    loadComponent: () =>
+      import(
+        './pages/list-crud-logicaldelete/list-crud-logicaldelete.page'
+      ).then((m) => m.ListCrudLogicaldeletePage),
+  },
+  {
+    path: 'ar-view',
+    loadComponent: () =>
+      import('./pages/ar-view/ar-view.page').then((m) => m.ArViewPage),
+  },
+  {
+    path: 'myth-detail/:id',
+    loadComponent: () =>
+      import('./pages/myth-detail/myth-detail.page').then(
+        (m) => m.MythDetailPage
+      ),
+  },
+  {
+    path: 'legend-collection',
+    loadComponent: () =>
+      import('./pages/legend-collection/legend-collection.page').then(
+        (m) => m.LegendCollectionPage
+      ),
   },
 ];

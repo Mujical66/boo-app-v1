@@ -18,11 +18,10 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
-  // IonIcon,
-  IonButton, // <-- Agrega esta línea
-  // IonCardContent,
-  // IonItem,
+  IonButton,
   IonSpinner,
+  IonButtons,
+  IonBackButton,
 } from '@ionic/angular/standalone';
 import { AlertController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -45,11 +44,10 @@ import { ApiBooappService } from '../../services/api-booapp.service';
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
-    // IonIcon,
-    IonButton, // <-- Agrega esta línea
-    // IonCardContent,
-    // IonItem,
+    IonButton,
     IonSpinner,
+    IonButtons,
+    IonBackButton,
     NgIf,
     NgFor,
   ],
@@ -115,6 +113,55 @@ export class ListCrudEventoPage implements OnInit {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
       message: '¿Está seguro de eliminar este registro?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+        },
+        {
+          text: 'Sí',
+          handler: () => {
+            this.apiService.eliminarEvento(item._id || item.id).subscribe({
+              next: async () => {
+                this.llenarDatos();
+                const successAlert = await this.alertCtrl.create({
+                  header: 'Eliminado',
+                  message: 'Registro eliminado con éxito',
+                  buttons: [
+                    {
+                      text: 'Continuar',
+                      role: 'confirm',
+                    },
+                  ],
+                });
+                await successAlert.present();
+              },
+              error: async () => {
+                const errorAlert = await this.alertCtrl.create({
+                  header: 'Error',
+                  message: 'Error al eliminar el registro',
+                  buttons: [
+                    {
+                      text: 'Continuar',
+                      role: 'confirm',
+                    },
+                  ],
+                });
+                await errorAlert.present();
+              },
+            });
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
+
+  async eliminarLogico(item: any) {
+    const alert = await this.alertCtrl.create({
+      header: 'Confirmar',
+      message:
+        '¿Está seguro de eliminar lógicamente este registro. Posteriormente lo puede Restaurar?',
       buttons: [
         {
           text: 'No',

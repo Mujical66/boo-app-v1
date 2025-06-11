@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/ar-view"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Colección de Leyendas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Colección de Leyendas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding">
+    <p *ngIf="collectedLegends.length === 0">
+      ¡Aún no has descubierto ninguna leyenda! Escanea los marcadores para
+      encontrarlas.
+    </p>
+
+    <ion-list *ngIf="collectedLegends.length > 0">
+      <ion-item
+        *ngFor="let legend of collectedLegends"
+        button
+        (click)="viewMythDetail(legend.id)"
+      >
+        <ion-avatar slot="start">
+          <!-- Aquí podrías poner una imagen representativa de la leyenda -->
+          <img
+            [src]="'assets/icons/' + legend.id + '.png'"
+            alt="{{ legend.name }}"
+            onerror="this.src='https://placehold.co/50x50/cccccc/ffffff?text=?'"
+          />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ legend.name }}</h2>
+          <p>{{ legend.mythSummary }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
